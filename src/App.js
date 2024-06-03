@@ -1,22 +1,41 @@
-import logo from './logo.svg';
-import './App.css';
-import GlobalStyle from './globalStyles';
-import { ThemeProvider } from 'styled-components';
-import { lightTheme } from './components/Themes';
+import { Routes, Route, useLocation } from "react-router-dom";
+import { ThemeProvider } from "styled-components";
+import { lightTheme } from "./components/Themes";
+import { AnimatePresence } from "framer-motion";
+import GlobalStyle from "./globalStyles";
+
+//Components
+import Main from "./components/Main";
+import AboutPage from "./components/AboutPage";
+import BlogPage from "./components/BlogPage";
+import WorkPage from "./components/WorkPage";
+import MySkillsPage from "./components/MySkillsPage";
 
 function App() {
-  return <>
+  const location = useLocation();
+  return (
+    <>
+      <GlobalStyle />
 
+      <ThemeProvider theme={lightTheme}>
+        <AnimatePresence mode='wait'>
+          <Routes key={location.pathname} location={location} >
 
-    <GlobalStyle />
+            <Route path="/" element={<Main />} />
 
-    <ThemeProvider theme={lightTheme}>
-      App File
-    </ThemeProvider>
+            <Route path="/about" element={<AboutPage />} />
 
+            <Route path="/blog" element={<BlogPage />} />
 
+            <Route path="/work" element={<WorkPage />} />
 
-  </>
+            <Route path="/skills" element={<MySkillsPage />} />
+            <Route path="*" element={<Main />} />
+          </Routes>
+        </AnimatePresence>
+      </ThemeProvider>
+    </>
+  );
 }
 
 export default App;
