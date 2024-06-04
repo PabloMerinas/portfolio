@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { PowerBtn } from '../components/Allsvgs'
+import { PowerBtn } from '../components/AllSvgs'
 import { NavLink } from 'react-router-dom'
 
 const Power = styled.button`
