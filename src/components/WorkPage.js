@@ -78,7 +78,7 @@ const WorkPage = () => {
       <Box>
         <LogoComponent theme="dark" />
         <SocialIcons theme="dark" />
-        <PowerButton />
+        <PowerButton bgColor={'white'}/>
 
         <Main ref={ref} variants={container} initial="hidden" animate="show">
           {Work.map((d) => (

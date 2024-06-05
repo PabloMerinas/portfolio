@@ -18,7 +18,7 @@ function App() {
 
       <ThemeProvider theme={lightTheme}>
         <AnimatePresence mode='wait'>
-          <Routes key={location.pathname} location={location} >
+          <Routes key={location.pathname} location={location}>
 
             <Route path="/" element={<Main />} />
 

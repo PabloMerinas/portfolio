@@ -7,7 +7,6 @@ import { Design, Develope } from './AllSvgs';
 import LogoComponent from '../subComponents/LogoComponent';
 import SocialIcons from '../subComponents/SocialIcons';
 import PowerButton from '../subComponents/PowerButton';
-import ParticleComponent from '../subComponents/ParticleComponent';
 import BigTitle from '../subComponents/BigTitlte'
 
 const Box = styled.div`
@@ -89,8 +88,7 @@ const MySkillsPage = () => {
 
                 <LogoComponent theme='light' />
                 <SocialIcons theme='light' />
-                <PowerButton />
-                <ParticleComponent theme='light' />
+                <PowerButton bgColor={'black'}/>
                 <Main>
                     <Title>
                         <Design width={40} height={40} /> Backend
@@ -141,7 +139,7 @@ const MySkillsPage = () => {
                 </Main>
 
 
-                <BigTitle text="SKILLS" top="80%" right="30%" />
+                <BigTitle text="HABILIDADES" top="80%" right="30%" />
 
             </Box>
 
