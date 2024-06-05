@@ -75,22 +75,24 @@ const WorkPage = () => {
 
   return (
     <ThemeProvider theme={DarkTheme}>
-      <Box>
-        <LogoComponent theme="dark" />
-        <SocialIcons theme="dark" />
-        <PowerButton bgColor={'white'}/>
+      <div id='main-container'>
+        <Box>
+          <LogoComponent theme="dark" />
+          <SocialIcons theme="dark" />
+          <PowerButton bgColor={'white'} />
 
-        <Main ref={ref} variants={container} initial="hidden" animate="show">
-          {Work.map((d) => (
-            <Card key={d.id} data={d} />
-          ))}
-        </Main>
-        <Rotate ref={yinyang}>
-          <YinYang width={80} height={80} fill={DarkTheme.text} />
-        </Rotate>
+          <Main ref={ref} variants={container} initial="hidden" animate="show">
+            {Work.map((d) => (
+              <Card key={d.id} data={d} />
+            ))}
+          </Main>
+          <Rotate ref={yinyang}>
+            <YinYang width={80} height={80} fill={DarkTheme.text} />
+          </Rotate>
 
-        <BigTitlte text="PROYECTOS" top="10%" right="20%" />
-      </Box>
+          <BigTitlte text="PROYECTOS" top="10%" right="20%" />
+        </Box>
+      </div>
     </ThemeProvider>
   );
 };

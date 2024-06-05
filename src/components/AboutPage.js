@@ -60,26 +60,28 @@ const Main = styled.div`
 const AboutPage = () => {
     return (
         <ThemeProvider theme={DarkTheme}>
-            <Box>
+            <div id='main-container'>
+                <Box>
 
-                <LogoComponent theme='dark' />
-                <SocialIcons theme='dark' />
-                <PowerButton bgColor={'white'}/>
+                    <LogoComponent theme='dark' />
+                    <SocialIcons theme='dark' />
+                    <PowerButton bgColor={'white'} />
 
-                <Spaceman>
-                    <img src={astronaut} alt="spaceman" />
-                </Spaceman>
-                <Main>
-                    Soy un desarrollador fullstack ubicado en España. Me encanta crear sitios web simples pero hermosos con una excelente experiencia de usuario.
-                    <br /> <br />
-                    Estoy interesado en toda la parte de frontend y backend. Me gusta probar cosas nuevas y hacer grandes proyectos. Soy un freelancer independiente. Estoy aprendiendo continuamente, ya que me motiva aprender de todo.<br /> <br />
-                    Creo que todo es un arte cuando pones tu conciencia en ello. Puedes contactarme a través de mis enlaces sociales.
-                </Main>
+                    <Spaceman>
+                        <img src={astronaut} alt="spaceman" />
+                    </Spaceman>
+                    <Main>
+                        Soy un desarrollador fullstack ubicado en España. Me encanta crear sitios web simples pero hermosos con una excelente experiencia de usuario.
+                        <br /> <br />
+                        Estoy interesado en toda la parte de frontend y backend. Me gusta probar cosas nuevas y hacer grandes proyectos. Soy un freelancer independiente. Estoy aprendiendo continuamente, ya que me motiva aprender de todo.<br /> <br />
+                        Creo que todo es un arte cuando pones tu conciencia en ello. Puedes contactarme a través de mis enlaces sociales.
+                    </Main>
 
-                <BigTitle text="Sobre mi" top="10%" left="5%" />
+                    <BigTitle text="Sobre mi" top="10%" left="5%" />
 
 
-            </Box>
+                </Box>
+            </div>
 
         </ThemeProvider>
 

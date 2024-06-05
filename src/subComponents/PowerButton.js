@@ -1,9 +1,7 @@
-// Home button
-
 import React from 'react'
-import { NavLink } from 'react-router-dom'
 import styled from 'styled-components'
 import { PowerBtn } from '../components/AllSvgs'
+import { useNavigate } from 'react-router-dom'
 
 
 const Power = styled.button`
@@ -38,11 +36,20 @@ cursor: pointer;
 `
 
 const PowerButton = ({bgColor}) => {
+    const navigate = useNavigate();
+
+    const handleClick = () => {
+        const rootElement = document.getElementById('main-container');
+        rootElement.style.transition = 'opacity 0.5s ease';
+        rootElement.style.opacity = 0;
+        setTimeout(() => {
+            navigate('/');
+        }, 505);
+    };
+
     return (
-        <Power bgColor={bgColor}>
-        <NavLink to="/">
-        <PowerBtn width={30} height={30} fill='currentColor' />
-        </NavLink>
+        <Power bgColor={bgColor} onClick={handleClick}>
+            <PowerBtn width={30} height={30} fill='currentColor' />
         </Power>
     )
 }

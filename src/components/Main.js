@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import React, { useState, useEffect } from 'react'
-import { NavLink, useNavigate  } from 'react-router-dom'
+import { NavLink, useNavigate } from 'react-router-dom'
 import styled from 'styled-components'
 import LogoComponent from '../subComponents/LogoComponent'
 import SocialIcons from '../subComponents/SocialIcons'
@@ -19,6 +19,7 @@ h2,h3,h4,h5,h6{
   font-family:'Karla', sans-serif ;
   font-weight:500;
 }
+
 `
 
 const Container = styled.div`
@@ -104,7 +105,8 @@ const Main = () => {
         setSkillTransitionState(true);
         setTimeout(() => {
             navigate('/skills');
-        }, 501);    };
+        }, 501);
+    };
 
 
     return (

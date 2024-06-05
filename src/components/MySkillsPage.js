@@ -80,7 +80,6 @@ ul,p{
     margin-left: 2rem;
 }
 `
-// //#FCF6F4;
 const Transition = styled.div`
   background-color: #FCF6F4;
   position: absolute;
@@ -96,68 +95,70 @@ const MySkillsPage = () => {
 
     useEffect(() => {
         setTransitionWidth('0%');
-      }, []);
-    
+    }, []);
+
     return (
         <ThemeProvider theme={lightTheme}>
-            <Box>
-                <LogoComponent theme='light' />
-                <SocialIcons theme='light' />
-                <PowerButton bgColor={'black'} />
-                <Main>
-                    <Title>
-                        <Design width={40} height={40} /> Backend
-                    </Title>
-                    <Description>
-                        ¡Me apasiona crear aplicaciones y servicios robustos y eficientes!
-                    </Description>
-                    <Description>
-                        <strong>Me gusta diseñar:</strong>
-                        <ul>
-                            <li>
-                                APIs
-                            </li>
-                            <li>
-                                Microservicios
-                            </li>
-                        </ul>
-                    </Description>
-                    <Description>
-                        <strong>Herramientas:</strong>
-                        <ul>
-                            <li>
-                                Java: Utilizo Java para desarrollar aplicaciones backend de alto rendimiento.
-                            </li>
-                        </ul>
-                    </Description>
-                </Main>
+            <div id='main-container'>
+                <Box>
+                    <LogoComponent theme='light' />
+                    <SocialIcons theme='light' />
+                    <PowerButton bgColor={'black'} />
+                    <Main>
+                        <Title>
+                            <Design width={40} height={40} /> Backend
+                        </Title>
+                        <Description>
+                            ¡Me apasiona crear aplicaciones y servicios robustos y eficientes!
+                        </Description>
+                        <Description>
+                            <strong>Me gusta diseñar:</strong>
+                            <ul>
+                                <li>
+                                    APIs
+                                </li>
+                                <li>
+                                    Microservicios
+                                </li>
+                            </ul>
+                        </Description>
+                        <Description>
+                            <strong>Herramientas:</strong>
+                            <ul>
+                                <li>
+                                    Java: Utilizo Java para desarrollar aplicaciones backend de alto rendimiento.
+                                </li>
+                            </ul>
+                        </Description>
+                    </Main>
 
-                <Main>
-                    <Title>
-                        <Develope width={40} height={40} /> Frontend
-                    </Title>
-                    <Description>
-                        Me encanta crear diseños webs limpios, simples y minimalistas.
-                    </Description>
-                    <Description>
-                        <strong>Habilidades</strong>
-                        <p>
-                            HTML, CSS, JavaScript, React, Sass, Bootstrap, Tailwind, etc.
-                        </p>
-                    </Description>
-                    <Description>
-                        <strong>Herramientas</strong>
-                        <p>
-                            VSCode, GitHub, etc.
-                        </p>
-                    </Description>
-                </Main>
+                    <Main>
+                        <Title>
+                            <Develope width={40} height={40} /> Frontend
+                        </Title>
+                        <Description>
+                            Me encanta crear diseños webs limpios, simples y minimalistas.
+                        </Description>
+                        <Description>
+                            <strong>Habilidades</strong>
+                            <p>
+                                HTML, CSS, JavaScript, React, Sass, Bootstrap, Tailwind, etc.
+                            </p>
+                        </Description>
+                        <Description>
+                            <strong>Herramientas</strong>
+                            <p>
+                                VSCode, GitHub, etc.
+                            </p>
+                        </Description>
+                    </Main>
 
 
-                <BigTitle text="HABILIDADES" top="80%" right="30%" />
-                <Transition transitionWidth={transitionWidth} />
+                    <BigTitle text="HABILIDADES" top="80%" right="30%" />
+                    <Transition transitionWidth={transitionWidth} />
+                </Box>
+            </div>
 
-            </Box>
         </ThemeProvider>
 
     )
