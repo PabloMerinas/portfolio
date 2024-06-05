@@ -57,7 +57,7 @@ justify-content: space-evenly;
 `
 
 const ABOUT = styled(NavLink)`
-color: ${props => props.click ? props.theme.body : props.theme.text};
+color: #FCF6F4;
 text-decoration: none;
 z-index:1;
 `
@@ -87,13 +87,24 @@ z-index: 999;
 width: ${props => props.skillTransitionState ? '100%' : '0%'};
 height: 100%;
 transition: width 0.5s linear;
-
 `
+
+const AboutTransition = styled.div`
+position: absolute;
+background-color: #000;
+left: 0;
+z-index: 999;
+width: ${props => props.aboutTransitionState ? '100%' : '0%'};
+height: 100%;
+transition: width 0.5s linear;
+`
+
 
 const Main = () => {
 
     const [click, setClick] = useState(false);
     const [skillTransitionState, setSkillTransitionState] = useState(false);
+    const [aboutTransitionState, setAboutTransitionState] = useState(false);
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -110,16 +121,22 @@ const Main = () => {
             navigate('/skills');
         }, 501);
     };
+    const handleAboutClick = () => {
+        setAboutTransitionState(true);
+        setTimeout(() => {
+            navigate('/about');
+        }, 501);
+    };
 
 
     return (
         <MainContainer>
             <DarkDiv click={click} />
             <SkillTransition skillTransitionState={skillTransitionState} />
-
+            <AboutTransition aboutTransitionState={aboutTransitionState} />
             <Container>
-                <LogoComponent theme={click ? 'dark' : 'light'} />
-                <SocialIcons theme={click ? 'dark' : 'light'} />
+                <LogoComponent theme='dark'/>
+                <SocialIcons theme='dark' />
 
 
                 <Contact target="_blank" href="mailto:pablomersot@gmail.com">
@@ -156,7 +173,7 @@ const Main = () => {
                     </motion.h2>
                 </WORK>
                 <BottomBar>
-                    <ABOUT to="/about" click={+click}>
+                    <ABOUT onClick={handleAboutClick}>
                         <motion.h2
                             initial={{
                                 y: 200,

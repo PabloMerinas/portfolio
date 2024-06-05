@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import styled, { keyframes, ThemeProvider } from 'styled-components'
 import { DarkTheme } from './Themes';
 
@@ -52,34 +52,45 @@ const Main = styled.div`
   top: 10rem;
   font-family: 'Ubuntu Mono', monospace;
   font-style: italic;
+
+`
+const FadeIn = styled.div`
+opacity: ${props => (props.show ? 1 : 0)};
+transition: opacity 1s ease;
 `
 
 
 
-
 const AboutPage = () => {
+    const [show, setShow] = useState(false);
+
+    useEffect(() => {
+        setShow(false);
+        setTimeout(() => {
+            setShow(true);
+        }, 1);
+    }, []);
+
     return (
         <ThemeProvider theme={DarkTheme}>
             <div id='main-container'>
                 <Box>
+                    <FadeIn show={show}>
+                        <LogoComponent theme='dark' />
+                        <SocialIcons theme='dark' />
+                        <PowerButton bgColor={'white'} />
 
-                    <LogoComponent theme='dark' />
-                    <SocialIcons theme='dark' />
-                    <PowerButton bgColor={'white'} />
-
-                    <Spaceman>
-                        <img src={astronaut} alt="spaceman" />
-                    </Spaceman>
-                    <Main>
-                        Soy un desarrollador fullstack ubicado en España. Me encanta crear sitios web simples pero hermosos con una excelente experiencia de usuario.
-                        <br /> <br />
-                        Estoy interesado en toda la parte de frontend y backend. Me gusta probar cosas nuevas y hacer grandes proyectos. Soy un freelancer independiente. Estoy aprendiendo continuamente, ya que me motiva aprender de todo.<br /> <br />
-                        Creo que todo es un arte cuando pones tu conciencia en ello. Puedes contactarme a través de mis enlaces sociales.
-                    </Main>
-
-                    <BigTitle text="Sobre mi" top="10%" left="5%" />
-
-
+                        <Spaceman>
+                            <img src={astronaut} alt="spaceman" />
+                        </Spaceman>
+                        <Main>
+                            Soy un desarrollador fullstack ubicado en España. Me encanta crear sitios web simples pero hermosos con una excelente experiencia de usuario.
+                            <br /> <br />
+                            Estoy interesado en toda la parte de frontend y backend. Me gusta probar cosas nuevas y hacer grandes proyectos. Soy un freelancer independiente. Estoy aprendiendo continuamente, ya que me motiva aprender de todo.<br /> <br />
+                            Creo que todo es un arte cuando pones tu conciencia en ello. Puedes contactarme a través de mis enlaces sociales.
+                        </Main>
+                        <BigTitle text="Sobre mi" top="10%" left="5%" />
+                    </FadeIn>
                 </Box>
             </div>
 

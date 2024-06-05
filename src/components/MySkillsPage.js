@@ -94,7 +94,10 @@ const MySkillsPage = () => {
     const [transitionWidth, setTransitionWidth] = useState('100%');
 
     useEffect(() => {
-        setTransitionWidth('0%');
+        setTransitionWidth('100%');
+        setTimeout(() => {
+            setTransitionWidth('0%');
+        }, 5);
     }, []);
 
     return (
