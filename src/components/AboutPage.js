@@ -72,14 +72,13 @@ const AboutPage = () => {
                     <img src={astronaut} alt="spaceman" />
                 </Spaceman>
                 <Main>
-                    I'm a front-end developer located in India. I love to create simple yet beautiful websites with great user experience.
+                    Soy un desarrollador fullstack ubicado en España. Me encanta crear sitios web simples pero hermosos con una excelente experiencia de usuario.
                     <br /> <br />
-                    I'm interested in the whole frontend stack Like trying new things and building great projects. I'm an independent freelancer and blogger. I love to write blogs and read books.
-                    <br /> <br />
-                    I believe everything is an Art when you put your consciousness in it. You can connect with me via social links.
+                    Estoy interesado en toda la parte de frontend y backend. Me gusta probar cosas nuevas y hacer grandes proyectos. Soy un freelancer independiente. Estoy aprendiendo continuamente, ya que me motiva aprender de todo.<br /> <br />
+                    Creo que todo es un arte cuando pones tu conciencia en ello. Puedes contactarme a través de mis enlaces sociales.
                 </Main>
 
-                <BigTitle text="ABOUT" top="10%" left="5%" />
+                <BigTitle text="Sobre mi" top="10%" left="5%" />
 
 
             </Box>

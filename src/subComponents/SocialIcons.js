@@ -1,58 +1,89 @@
-import React from 'react'
-import { NavLink } from 'react-router-dom'
-import { Facebook, Github, Twitter, YouTube } from '../components/AllSvgs'
-import styled from 'styled-components'
-import { DarkTheme } from '../components/Themes';
+import { motion } from "framer-motion";
+import React from "react";
+// import { NavLink } from 'react-router-dom'
+import styled from "styled-components";
+import { Facebook, Github } from "../components/AllSvgs";
+import { DarkTheme } from "../components/Themes";
 
 const Icons = styled.div`
-display: flex;
-flex-direction: column;
-align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
-position: fixed;
-bottom: 0;
-left: 2rem;
+  position: fixed;
+  bottom: 0;
+  left: 2rem;
 
-z-index: 3;
+  z-index: 3;
 
-& > *:not(:last-child) {
+  & > *:not(:last-child) {
     margin: 0.5rem 0;
   }
+`;
 
-`
-const Line = styled.span`
-width: 2px;
-height: 8rem;
-background-color: ${props => props.color === 'dark' ? DarkTheme.text : DarkTheme.body};
-`
+const Line = styled(motion.span)`
+  width: 2px;
+  height: 8rem;
+  background-color: ${(props) =>
+    props.color === "dark" ? DarkTheme.text : DarkTheme.body};
+`;
 
 const SocialIcons = (props) => {
-    return (
-        <Icons>
-            <div>
-                <NavLink style={{ color: 'inherit' }} target='_blank' to={{pathname: ''}}>
-                    <Github widht={25} height={25} fill={props.theme === 'dark' ? DarkTheme.text : DarkTheme.body}/>
-                </NavLink>
-            </div>
-            <div>
-                <NavLink style={{ color: 'inherit' }} target='_blank' to={{pathname: ''}}>
-                    <Twitter widht={25} height={25} fill={props.theme === 'dark' ? DarkTheme.text : DarkTheme.body}/>
-                </NavLink>
-            </div>
-            <div>
-                <NavLink style={{ color: 'inherit' }} target='_blank' to={{pathname: ''}}>
-                    <Facebook widht={25} height={25} fill={props.theme === 'dark' ? DarkTheme.text : DarkTheme.body}/>
-                </NavLink>
-            </div>
-            <div>
-                <NavLink style={{ color: 'inherit' }} target='_blank' to={{pathname: ''}}>
-                    <YouTube widht={25} height={25} fill={props.theme === 'dark' ? DarkTheme.text : DarkTheme.body}/>
-                </NavLink>
-            </div>
+  return (
+    <Icons>
+      <motion.div
+        initial={{scale:0 }}
+        animate={{ scale: [0, 1, 1.5, 1] }}
+        transition={{ type: "spring", duration: 1, delay: 1 }}
+      >
+        <a
+          style={{ color: "inherit" }}
+          target="_blank"
+          href={"https://github.com/PabloMerinas"}
+          rel="noreferrer"
+        >
+          <Github
+            width={25}
+            height={25}
+            fill={props.theme === "dark" ? DarkTheme.text : DarkTheme.body}
+          />
+        </a>
+      </motion.div>
 
-            <Line color={props.theme}/>
-        </Icons>
-    )
-}
+      <motion.div
+        initial={{scale:0 }}
+        animate={{ scale: [0, 1, 1.5, 1] }}
+        transition={{ type: "spring", duration: 1, delay: 1.4 }}
+      >
+        <a
+          style={{ color: "inherit" }}
+          target="_blank"
+          href={"https://www.facebook.com/profile.php?id=100006204137827"}
+          rel="noreferrer"
+        >
+          <Facebook
+            width={25}
+            height={25}
+            fill={props.theme === "dark" ? DarkTheme.text : DarkTheme.body}
+          />
+        </a>
+      </motion.div>
+      <Line
+        color={props.theme}
+        initial={{
+          height: 0,
+        }}
+        animate={{
+          height: "8rem",
+        }}
+        transition={{
+          type: "spring",
+          duration: 1,
+          delay: 0.8,
+        }}
+      />
+    </Icons>
+  );
+};
 
-export default SocialIcons
+export default SocialIcons;
