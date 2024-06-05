@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react';
 import styled, { ThemeProvider } from 'styled-components'
 import { lightTheme } from './Themes';
 import { Design, Develope } from './AllSvgs';
@@ -80,15 +80,30 @@ ul,p{
     margin-left: 2rem;
 }
 `
+// //#FCF6F4;
+const Transition = styled.div`
+  background-color: #FCF6F4;
+  position: absolute;
+  z-index: 999;
+  width: ${({ transitionWidth }) => transitionWidth};
+  height: 100%;
+  transition: width 0.5s linear;
+  left: 0;
+`;
 
 const MySkillsPage = () => {
+    const [transitionWidth, setTransitionWidth] = useState('100%');
+
+    useEffect(() => {
+        setTransitionWidth('0%');
+      }, []);
+    
     return (
         <ThemeProvider theme={lightTheme}>
             <Box>
-
                 <LogoComponent theme='light' />
                 <SocialIcons theme='light' />
-                <PowerButton bgColor={'black'}/>
+                <PowerButton bgColor={'black'} />
                 <Main>
                     <Title>
                         <Design width={40} height={40} /> Backend
@@ -140,9 +155,9 @@ const MySkillsPage = () => {
 
 
                 <BigTitle text="HABILIDADES" top="80%" right="30%" />
+                <Transition transitionWidth={transitionWidth} />
 
             </Box>
-
         </ThemeProvider>
 
     )

@@ -1,11 +1,10 @@
 import { motion } from 'framer-motion'
 import React, { useState, useEffect } from 'react'
-import { NavLink } from 'react-router-dom'
+import { NavLink, useNavigate  } from 'react-router-dom'
 import styled from 'styled-components'
 import LogoComponent from '../subComponents/LogoComponent'
 import SocialIcons from '../subComponents/SocialIcons'
 import Intro from './Intro'
-
 
 
 const MainContainer = styled.div`
@@ -61,10 +60,11 @@ color: ${props => props.click ? props.theme.body : props.theme.text};
 text-decoration: none;
 z-index:1;
 `
-const SKILLS = styled(NavLink)`
+const SKILLS = styled.div`
 color: ${props => props.theme.text};
 text-decoration: none;
 z-index:1;
+cursor: pointer;
 `
 
 const DarkDiv = styled.div`
@@ -78,20 +78,40 @@ height: ${props => props.click ? '100%' : '0%'};
 z-index:1;
 transition: height 0.5s ease, width 1s ease 0.5s;
 `
+const SkillTransition = styled.div`
+position: absolute;
+background-color: #FCF6F4;
+right: 0;
+z-index: 999;
+width: ${props => props.skillTransitionState ? '100%' : '0%'};
+height: 100%;
+transition: width 0.5s linear;
 
+`
 
 const Main = () => {
 
     const [click, setClick] = useState(false);
-
+    const [skillTransitionState, setSkillTransitionState] = useState(false);
+    const navigate = useNavigate();
 
     useEffect(() => {
         setClick(false);
         setClick(true);
     }, []);
+
+    const handleSkillsClick = () => {
+        setSkillTransitionState(true);
+        setTimeout(() => {
+            navigate('/skills');
+        }, 501);    };
+
+
     return (
         <MainContainer>
             <DarkDiv click={click} />
+            <SkillTransition skillTransitionState={skillTransitionState} />
+
             <Container>
                 <LogoComponent theme={click ? 'dark' : 'light'} />
                 <SocialIcons theme={click ? 'dark' : 'light'} />
@@ -147,7 +167,7 @@ const Main = () => {
                             Sobre mi
                         </motion.h2>
                     </ABOUT>
-                    <SKILLS to="/skills">
+                    <SKILLS onClick={handleSkillsClick}>
                         <motion.h2
                             initial={{
                                 y: 200,
