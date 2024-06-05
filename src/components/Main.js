@@ -35,7 +35,7 @@ text-decoration: none;
 z-index:1;
 `
 const WORK = styled(NavLink)`
-color: ${props => props.click ? props.theme.body : props.theme.text};
+color: #FCF6F4;
 
 position: absolute;
 top: 50%;
@@ -99,7 +99,6 @@ height: 100%;
 transition: width 0.5s linear;
 `
 
-
 const Main = () => {
 
     const [click, setClick] = useState(false);
@@ -125,6 +124,12 @@ const Main = () => {
         setAboutTransitionState(true);
         setTimeout(() => {
             navigate('/about');
+        }, 501);
+    };
+    const handleWorkClick = () => {
+        setAboutTransitionState(true);
+        setTimeout(() => {
+            navigate('/work');
         }, 501);
     };
 
@@ -156,7 +161,7 @@ const Main = () => {
                         Contactame!
                     </motion.h2>
                 </Contact>
-                <WORK to="/work" click={+click}>
+                <WORK onClick={handleWorkClick}>
                     <motion.h2
                         initial={{
                             y: -200,

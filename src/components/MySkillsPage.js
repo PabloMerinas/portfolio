@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import styled, { ThemeProvider } from 'styled-components'
+import styled, { keyframes, ThemeProvider } from 'styled-components';
 import { lightTheme } from './Themes';
 import { Design, Develope } from './AllSvgs';
-
+import asideImage from '../assets/Images/aside.png'
 
 import LogoComponent from '../subComponents/LogoComponent';
 import SocialIcons from '../subComponents/SocialIcons';
@@ -90,8 +90,36 @@ const Transition = styled.div`
   left: 0;
 `;
 
+const slideIn = keyframes`
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+`;
+const slideOut = keyframes`
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+`;
+const AsideImg = styled.img`
+position: absolute;
+bottom: 0;
+right: 0;
+width: 12vw;
+height: auto;
+z-index: 2;
+animation: ${({ visible }) => (visible ? slideIn : slideOut)} 3s ease-out forwards;
+cursor: pointer;
+`
+
 const MySkillsPage = () => {
     const [transitionWidth, setTransitionWidth] = useState('100%');
+    const [isVisible, setIsVisible] = useState(true);
 
     useEffect(() => {
         setTransitionWidth('100%');
@@ -99,6 +127,10 @@ const MySkillsPage = () => {
             setTransitionWidth('0%');
         }, 5);
     }, []);
+
+    const toggleVisibility = () => {
+        setIsVisible(!isVisible);
+    };
 
     return (
         <ThemeProvider theme={lightTheme}>
@@ -159,6 +191,11 @@ const MySkillsPage = () => {
 
                     <BigTitle text="HABILIDADES" top="80%" right="30%" />
                     <Transition transitionWidth={transitionWidth} />
+                    <AsideImg
+                        src={asideImage}
+                        visible={isVisible}
+                        onClick={toggleVisibility}
+                    />
                 </Box>
             </div>
 
