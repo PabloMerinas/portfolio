@@ -35,16 +35,16 @@ cursor: pointer;
 }
 `
 
-const PowerButton = ({bgColor}) => {
+const PowerButton = ({ bgColor }) => {
     const navigate = useNavigate();
 
     const handleClick = () => {
-        const rootElement = document.getElementById('main-container');
-        rootElement.style.transition = 'opacity 0.5s ease';
-        rootElement.style.opacity = 0;
+        const mainContainerElement = document.getElementById('main-container');
+        mainContainerElement.style.transition = 'opacity 0.4s ease';
+        mainContainerElement.style.opacity = 0;
         setTimeout(() => {
             navigate('/');
-        }, 505);
+        }, 400);
     };
 
     return (

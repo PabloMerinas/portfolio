@@ -98,8 +98,11 @@ const Main = () => {
 
     useEffect(() => {
         setClick(false);
-        setClick(true);
+        setTimeout(() => {
+            setClick(true);
+        }, 5);
     }, []);
+
 
     const handleSkillsClick = () => {
         setSkillTransitionState(true);
@@ -189,7 +192,7 @@ const Main = () => {
                 </BottomBar>
 
             </Container>
-            {click ? <Intro /> : null}
+            <Intro />
         </MainContainer>
     )
 }
