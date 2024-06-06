@@ -40,7 +40,6 @@ const Rotate = styled.span`
   z-index: 1;
 `;
 
-// Framer-motion Configuration
 const container = {
   hidden: { opacity: 0 },
   show: {
