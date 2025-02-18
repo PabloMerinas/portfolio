@@ -78,7 +78,7 @@ const Intro = () => {
                 >
                     <h1>Hola!</h1>
                     <h3>Soy Pablo.</h3>
-                    <h6>Programador Junior FullStack.</h6>
+                    <h6>Programador FullStack.</h6>
                 </Text>
             </SubBox>
             <SubBox>

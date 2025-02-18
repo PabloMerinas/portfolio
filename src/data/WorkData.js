@@ -5,7 +5,7 @@ export const Work = [
         description: "Aplicación web que te permite documentar y gestionar tus viajes de manera fácil y organizada.",
         tags: ["React", "Java"],
 
-        demo: "http://pablomerinas.ddns.net/easytravels",
+        demo: "https://www.pablomerinas.com/easytravels",
         github: "https://github.com/PabloMerinas/Proyecto-Final-Pablo-Merinas-Soto"
     },
     {
@@ -14,7 +14,7 @@ export const Work = [
         description: "Aplicación web que te permite documentar y gestionar tus viajes de manera fácil y organizada.",
         tags: ["React", "Java"],
 
-        demo: "http://pablomerinas.ddns.net/easytravels",
+        demo: "https://www.pablomerinas.com/easytravels",
         github: "https://github.com/PabloMerinas/Proyecto-Final-Pablo-Merinas-Soto"
     },
     {
@@ -23,7 +23,7 @@ export const Work = [
         description: "Aplicación web que te permite documentar y gestionar tus viajes de manera fácil y organizada.",
         tags: ["React", "Java"],
 
-        demo: "http://pablomerinas.ddns.net/easytravels",
+        demo: "https://www.pablomerinas.com/easytravels",
         github: "https://github.com/PabloMerinas/Proyecto-Final-Pablo-Merinas-Soto"
     }
 ]
