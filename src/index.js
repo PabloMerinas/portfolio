@@ -4,20 +4,33 @@ import ReactDOM from 'react-dom/client';
 import App from './App';
 // import reportWebVitals from './reportWebVitals';
 import 'normalize.css'
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter, useLocation } from 'react-router-dom';
+import ReactGA from 'react-ga4';
 
+
+const TRACKING_ID = 'G-G-F9K76JB9ZL';
+ReactGA.initialize(TRACKING_ID);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+
+function AnalyticsWrapper({ children }) {
+  const location = useLocation();
+
+  React.useEffect(() => {
+    ReactGA.send({ hitType: 'pageview', page: location.pathname });
+  }, [location]);
+
+  return children;
+}
+
 root.render(
   <React.StrictMode>
-
-
     <BrowserRouter>
-      <App />
+      <AnalyticsWrapper>
+        <App />
+      </AnalyticsWrapper>
     </BrowserRouter>
-
   </React.StrictMode>
-
 );
 
 
