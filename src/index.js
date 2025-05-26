@@ -8,7 +8,7 @@ import { BrowserRouter, useLocation } from 'react-router-dom';
 import ReactGA from 'react-ga4';
 
 
-const TRACKING_ID = 'G-G-F9K76JB9ZL';
+const TRACKING_ID = 'G-F9K76JB9ZL';
 ReactGA.initialize(TRACKING_ID);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
