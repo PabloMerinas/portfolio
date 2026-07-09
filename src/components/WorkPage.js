@@ -19,6 +19,13 @@ const Box = styled.div`
   position: relative;
   display: flex;
   align-items: center;
+
+  @media (max-width: 48em) {
+    height: auto;
+    min-height: 100vh;
+    min-height: 100dvh;
+    padding: 8rem 0 3rem;
+  }
 `;
 
 const Main = styled(motion.ul)`
@@ -29,6 +36,29 @@ const Main = styled(motion.ul)`
   display: flex;
 
   color: white;
+
+  /* En móvil el truco de "scroll vertical mueve las tarjetas en horizontal"
+     no encaja con el gesto táctil esperado (deslizar a los lados). Se
+     sustituye por scroll horizontal nativo con snap. */
+  @media (max-width: 48em) {
+    position: relative;
+    top: auto;
+    left: 0;
+    height: auto;
+    width: 100%;
+    padding: 0 1.5rem;
+    box-sizing: border-box;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    gap: 1.25rem;
+
+    & > li {
+      scroll-snap-align: start;
+      flex-shrink: 0;
+      margin-right: 0;
+    }
+  }
 `;
 const Rotate = styled.span`
   display: block;
@@ -60,6 +90,10 @@ const WorkPage = () => {
     let element = ref.current;
 
     const rotate = () => {
+      // En móvil las tarjetas usan scroll horizontal nativo (ver media
+      // query de Main), así que el scroll vertical no debe moverlas.
+      if (window.innerWidth <= 768) return;
+
       element.style.transform = `translateX(${-window.pageYOffset}px)`;
 
       return (yinyang.current.style.transform =

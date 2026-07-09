@@ -13,6 +13,7 @@ const Box = styled.div`
 background-color: ${props => props.theme.body};
 width: 100vw;
 height:100vh;
+height: 100dvh;
 position: relative;
 display: flex;
 justify-content: space-evenly;

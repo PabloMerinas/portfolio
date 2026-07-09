@@ -11,6 +11,7 @@ const MainContainer = styled.div`
 background: ${props => props.theme.body};
 width: 100vw;
 height: 100vh;
+height: 100dvh;
 overflow:hidden;
 
 position: relative;
