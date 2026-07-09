@@ -20,6 +20,10 @@ h2,h3,h4,h5,h6{
   font-weight:500;
 }
 
+h2{
+  font-size: clamp(1rem, 4vw, 2rem);
+}
+
 `
 
 const Container = styled.div`
@@ -54,6 +58,12 @@ width: 100%;
 
 display: flex;
 justify-content: space-evenly;
+
+@media (max-width: 48em) {
+  bottom: 4.5rem;
+  padding: 0 1rem;
+  box-sizing: border-box;
+}
 `
 
 const ABOUT = styled(NavLink)`

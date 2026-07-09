@@ -25,5 +25,23 @@ export const Work = [
 
         demo: "https://pablomerinas.github.io/chiles-picantes/",
         github: "https://github.com/PabloMerinas/chiles-picantes"
+    },
+    {
+        id: 4,
+        name: "Fragua de Prompts",
+        description: "Constructor interactivo de prompts con radar de completitud en tiempo real, plantillas guiadas y prueba directa en Claude, ChatGPT o Gemini.",
+        tags: ["React", "Vite"],
+
+        demo: "https://pablomerinas.github.io/prompt-forge/",
+        github: "https://github.com/PabloMerinas/prompt-forge"
+    },
+    {
+        id: 5,
+        name: "Session Lens",
+        description: "CLI que analiza el coste real y el aprovechamiento de caché de tus sesiones de Claude Code y genera un informe local, sin subir nada a ningún servidor.",
+        tags: ["Node", "React", "CLI"],
+
+        demo: "https://github.com/PabloMerinas/session-lens",
+        github: "https://github.com/PabloMerinas/session-lens"
     }
 ]

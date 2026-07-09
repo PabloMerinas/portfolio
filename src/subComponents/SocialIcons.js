@@ -19,6 +19,12 @@ const Icons = styled.div`
   & > *:not(:last-child) {
     margin: 0.5rem 0;
   }
+
+  @media (max-width: 48em) {
+    left: 1rem;
+    transform: scale(0.7);
+    transform-origin: bottom left;
+  }
 `;
 
 const Line = styled(motion.span)`
